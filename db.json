@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "text": "Meeting at school",
+      "day": "2021-03-06T13:30:00.000",
+      "reminder": false
+    },
+    {
+      "id": "2",
+      "text": "Food Shopping",
+      "day": "2021-03-07T14:00:00.000",
+      "reminder": false
+    },
+    {
+      "id": "3",
+      "text": "Get Gas",
+      "day": "2021-03-08T12:05:00.000",
+      "reminder": true
+    }
+  ]
+}
