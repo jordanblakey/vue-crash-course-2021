@@ -38,10 +38,17 @@ export default {
         return
       }
 
+      let validDate = new Date(this.day)
+      if (validDate.toString() === 'Invalid Date') {
+        alert('Enter a numeric date and time (e.g. 2021-03-25 12:00).')
+        return
+      }
+      validDate = validDate.toISOString()
+
       const newTask = {
         id: Math.floor(Math.random() * 100000),
         text: this.text,
-        day: this.day,
+        day: validDate,
         reminder: this.reminder
       }
 

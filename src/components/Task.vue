@@ -7,7 +7,7 @@
       <h3>
         {{ task.text }}
       </h3>
-      <p>{{ task.day }}</p>
+      <p>{{ displayDate }}</p>
     </div>
     <i @click="$emit('delete-task', task.id)" class="fas fa-times"></i>
   </div>
@@ -18,6 +18,14 @@ export default {
   name: 'Task',
   props: {
     task: Object
+  },
+  computed: {
+    displayDate: function() {
+      let d = new Date(this.$props.task.day)
+      if (d.toString() !== 'Invalid Date') {
+        return d.toLocaleDateString() + ' at ' + d.toLocaleTimeString()
+      } else return this.$props.task.day
+    }
   }
 }
 </script>
@@ -26,6 +34,11 @@ export default {
 .fas {
   color: red;
   font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .task {
   background: #f4f4f4;
